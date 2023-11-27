@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: nodeport-dev-vling-v2
+  annotations:
+    # https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/1056#issuecomment-551585078
+    alb.ingress.kubernetes.io/healthcheck-path: /api/healthcheck 
+    alb.ingress.kubernetes.io/healthcheck-interval-seconds: "30"
+  labels:
+    app: nodeport-dev-vling-v2
+    stage: dev
+    tier: frontend
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 4000
+      targetPort: 4000
+      protocol: TCP
+  selector:
+    app: dev-vling-v2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: dev-vling-v2
+spec:
+  minReadySeconds: 5
+  selector:
+    matchLabels:
+      app: dev-vling-v2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dev-vling-v2
+        stage: dev
+        commit: b825b3fab147a64fbaae5e0042872f777abce2e2
+        version: v20220926_1664177188
+        deploy: template
+        tier: frontend
+    spec:
+      nodeSelector:
+        kops.k8s.io/instancegroup: nodesdev
+      tolerations:
+        - key: dev
+          operator: Exists
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: dev-vling-v2
+          image: 314916389090.dkr.ecr.ap-northeast-2.amazonaws.com/vling_gui_v2:dev
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 4000
+          resources:
+            limits:
+              cpu: "200m"
+              memory: "400Mi"
+            requests:
+              cpu: "200m"
+              memory: "300Mi"
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /api/readiness
+              port: 4000
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 10
+            initialDelaySeconds: 30 
+          livenessProbe:
+            httpGet:
+              path: /api/healthcheck
+              port: 4000
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 10
+            initialDelaySeconds: 30 

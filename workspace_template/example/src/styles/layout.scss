@@ -1,0 +1,39 @@
+// 3칸 : PC, Laptop, Tablet(L) ---- max-width:1652px
+// 2칸 : Tablet(M) ---------------- max-width:1178px
+// 1칸 : Tablet(S), Moblie -------- max-width:
+// 사용법 : @include block_size(2);
+@mixin block_size($block-step) {
+  $minimum: 375px;
+  $block-gap: 24px;
+
+  width: calc($minimum * $block-step + $block-gap * ($block-step - 1));
+}
+
+// 화면 구성
+$header_height: 60px;
+$footer_height: 200px;
+$sidebar_width: 250px;
+$main_height: calc(100vh - $header_height); // header height + footer height - header border px - footer border px ;
+$main_width: calc(100vw - $sidebar_width);
+$border_width: 1px;
+
+//   참고 :: https://jdsteinbach.com/css/sass-maps-breakpoint-mixin/
+//   참고 :: https://www.sassmeister.com/gist/c88f9357661530a02f9b
+$breakpoints: (
+  minimum: 340px,
+  375: 375px,
+  small: 570px,
+  medium: 720px,
+  large: 960px,
+  wide: 1200px,
+);
+
+@mixin breakpoint($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    @media (max-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}

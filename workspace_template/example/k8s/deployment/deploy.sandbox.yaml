@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: sandbox
+  name: svc-dev-vling-mf-post
+  annotations:
+    # https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/1056#issuecomment-551585078
+    alb.ingress.kubernetes.io/healthcheck-path: /api/healthcheck
+    alb.ingress.kubernetes.io/healthcheck-interval-seconds: '30'
+  labels:
+    app: svc-dev-vling-mf-post
+    stage: sandbox
+    tier: frontend
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 4000
+      targetPort: 4000
+      protocol: TCP
+  selector:
+    app: dev-vling-mf-post
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: sandbox
+  name: dev-vling-mf-post
+spec:
+  minReadySeconds: 5
+  selector:
+    matchLabels:
+      app: dev-vling-mf-post
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dev-vling-mf-post
+        stage: sandbox
+        commit: ignored
+        version: v20231127_1701047909
+        deploy: template
+        tier: frontend
+    spec:
+      nodeSelector:
+        kops.k8s.io/instancegroup: nodesdev
+      tolerations:
+        - key: dev
+          operator: Exists
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: dev-vling-mf-post
+          image: 314916389090.dkr.ecr.ap-northeast-2.amazonaws.com/vling_gui_v2:sandbox.mf.post
+          imagePullPolicy: 'Always'
+          ports:
+            - containerPort: 4000
+          resources:
+            limits:
+              cpu: '200m'
+              memory: '400Mi'
+            requests:
+              cpu: '200m'
+              memory: '300Mi'
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /api/readiness
+              port: 4000
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 10
+            initialDelaySeconds: 30
+          livenessProbe:
+            httpGet:
+              path: /api/healthcheck
+              port: 4000
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 10
+            initialDelaySeconds: 30

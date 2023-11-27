@@ -1,0 +1,6 @@
+{
+  "name": "@bzznbyd/shared-gql-example",
+  "version": "1.0.0",
+  "main": "./example.gql.js",
+  "license": "Bzznbyd"
+}
