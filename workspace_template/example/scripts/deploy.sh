@@ -88,6 +88,7 @@ TARGET_FILE=$YML_DEFAULT_FILE
 #define k8s const
 NAMESPACE=$(grep "deploy.namespace" $DIR_CURSC/../app.config.json | awk -F \" '{print $4}')
 APP_NAME=$(grep "app" $DIR_CURSC/../app.config.json | awk -F \" '{print $4}')
+OWNER_NAME=$(grep "owner" $DIR_CURSC/../app.config.json | awk -F \" '{print $4}')
 DEPLOY_NAME="$mode.$APP_NAME"
 if [ "$mode" = "sandbox" ]; then
   DEPLOY_NAME="dev.$APP_NAME"
@@ -115,6 +116,7 @@ local_version="$VERSION_TAG"
 local_image_endpoint="$ECRPATH"
 local_image_name="$IMAGENAME"
 local_image_tag="$IMAGETAG"
+local_owner_name="$OWNER_NAME"
 local_port=$(grep "port" $DIR_CURSC/../app.config.json | awk -F \" '{print $4}')
 
 #mode에 따라서 강제 설정되는 값들 조정
@@ -144,6 +146,7 @@ logger "local_image_endpoint: ${Yellow}$local_image_endpoint${Reset}"
 logger "local_image_name: ${Yellow}$local_image_name${Reset}"
 logger "local_image_tag: ${Yellow}$local_image_tag${Reset}"
 logger "local_port: ${Yellow}$local_port${Reset}"
+logger "local_owner_name: ${Yellow}$local_owner_name${Reset}"
 
 #append more variable here 
 local_namespace="$local_namespace" \
@@ -155,6 +158,7 @@ local_image_endpoint="$local_image_endpoint" \
 local_image_name="$local_image_name" \
 local_image_tag="$local_image_tag" \
 local_port="$local_port" \
+local_owner_name="$local_owner_name" \
 envsubst < "$TMPL_FOLDER/$TMPL_FILE" > "$TARGET_FOLDER/$TARGET_FILE"
 #endregion
 

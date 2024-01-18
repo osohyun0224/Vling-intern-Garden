@@ -20,6 +20,7 @@ IMAGETAG=`eval "echo" $IMAGETAG`
 ECRPATH=$(grep "registry.path" $DIR_CURSC/../app.config.json | awk -F \" '{print $4}')
 PROD_BRANCH=$(grep "git.branch.prod" $DIR_CURSC/../app.config.json | awk -F \" '{print $4}')
 PORT=$(grep "port" $DIR_CURSC/../app.config.json | awk -F \" '{print $4}')
+OWNER=$(grep "owner" $DIR_CURSC/../app.config.json | awk -F \" '{print $4}')
 
 ECRENDPOINT="$ECRPATH/$IMAGENAME"
 
@@ -30,4 +31,5 @@ show_config() {
   logger "registry.path: ${Green}$ECRPATH${Reset}"
   logger "registry.endpoint: ${Green}$ECRENDPOINT:${IMAGETAG}${Reset}"
   logger "git.branch.prod: ${Green}$PROD_BRANCH${Reset}"
+  logger "owner: ${Green}$OWNER${Reset}"
 }

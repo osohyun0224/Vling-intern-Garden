@@ -1,6 +1,7 @@
 {
   "app": "template_app_name",
   "port": "4000",
+  "owner": "Glen",
   "registry.name": "template_registry_name",
   "registry.tag": "template_tag",
   "registry.path": "314916389090.dkr.ecr.ap-northeast-2.amazonaws.com",

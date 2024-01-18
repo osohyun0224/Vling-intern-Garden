@@ -26,6 +26,8 @@ kind: Deployment
 metadata:
   namespace: $local_namespace
   name: $local_deployment_name
+  labels:
+    owner: $local_owner_name
 spec:
   minReadySeconds: 5
   selector:
