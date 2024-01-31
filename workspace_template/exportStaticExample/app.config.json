@@ -1,7 +1,7 @@
 {
-  "host": "example",
+  "host": "exampleStaticExample",
   "app": "template_app_name",
-  "port.local": "8010",
+  "port.local": "8020",
   "port.prod": "4000",
   "owner": "Glen",
   "registry.name": "template_registry_name",

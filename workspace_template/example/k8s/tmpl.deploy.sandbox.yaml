@@ -10,6 +10,7 @@ metadata:
   labels:
     app: svc-$local_deployment_name
     stage: $local_stage
+    deploy: ramped
     tier: frontend
 spec:
   type: NodePort
@@ -20,6 +21,7 @@ spec:
       protocol: TCP
   selector:
     app: $local_deployment_name
+    stage: $local_stage
 ---
 apiVersion: apps/v1
 kind: Deployment

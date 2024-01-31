@@ -1,7 +1,0 @@
-{
-  "name": "@bzznbyd/atom-example-button",
-  "version": "1.0.0",
-  "main": "ExampleButton.jsx",
-  "license": "MIT",
-  "dependencies": {}
-}

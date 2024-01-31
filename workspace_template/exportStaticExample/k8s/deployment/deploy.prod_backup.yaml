@@ -1,16 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: sandbox
-  name: svc-dev-vling-mf-search
+  namespace: default
+  name: nodeport-prod-vling-v2
   annotations:
     # https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/1056#issuecomment-551585078
-    alb.ingress.kubernetes.io/healthcheck-path: /api/healthcheck
-    alb.ingress.kubernetes.io/healthcheck-interval-seconds: '30'
+    alb.ingress.kubernetes.io/healthcheck-path: /api/healthcheck 
+    alb.ingress.kubernetes.io/healthcheck-interval-seconds: "30"
   labels:
-    app: svc-dev-vling-mf-search
-    stage: sandbox
-    deploy: ramped
+    app: nodeport-prod-vling-v2
+    stage: prod
     tier: frontend
 spec:
   type: NodePort
@@ -20,58 +19,51 @@ spec:
       targetPort: 4000
       protocol: TCP
   selector:
-    app: dev-vling-mf-search
-    stage: sandbox
+    app: prod-vling-v2
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: sandbox
-  name: dev-vling-mf-search
-  labels:
-    owner: Harry_Glen
+  namespace: default
+  name: prod-vling-v2
 spec:
   minReadySeconds: 5
   selector:
     matchLabels:
-      app: dev-vling-mf-search
+      app: prod-vling-v2
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
+      maxSurge: 2
       maxUnavailable: 0
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
-        app: dev-vling-mf-search
-        stage: sandbox
-        commit: ignored
-        version: v20240129_1706517497
-        deploy: template
+        app: prod-vling-v2
+        stage: prod
+        commit: 2fe72534f164b00af7acee317abc965860a98ec8
+        version: v20230802_1690970007
+        deploy: ramped
         tier: frontend
     spec:
       nodeSelector:
-        kops.k8s.io/instancegroup: nodesdev
-      tolerations:
-        - key: dev
-          operator: Exists
+        kops.k8s.io/instancegroup: nodes
       terminationGracePeriodSeconds: 30
       containers:
-        - name: dev-vling-mf-search
-          image: 314916389090.dkr.ecr.ap-northeast-2.amazonaws.com/vling_gui_v2:sandbox.mf.search
-          imagePullPolicy: 'Always'
+        - name: prod-vling-v2
+          image: 314916389090.dkr.ecr.ap-northeast-2.amazonaws.com/vling_gui_v2:2fe72534f164b00af7acee317abc965860a98ec8
+          imagePullPolicy: "Always"
           ports:
             - containerPort: 4000
           resources:
             limits:
-              cpu: '200m'
-              memory: '400Mi'
+              cpu: "400m"
+              memory: "600Mi"
             requests:
-              cpu: '200m'
-              memory: '300Mi'
+              cpu: "300m"
+              memory: "300Mi"
           readinessProbe:
-            failureThreshold: 3
             httpGet:
               path: /api/readiness
               port: 4000
@@ -87,3 +79,10 @@ spec:
             successThreshold: 1
             timeoutSeconds: 10
             initialDelaySeconds: 30
+          volumeMounts:
+            - mountPath: "/usr/src/app/public/efs"
+              name: efs
+      volumes:
+        - name: efs
+          persistentVolumeClaim:
+            claimName: aws-pvc-k8s-efs001-default     

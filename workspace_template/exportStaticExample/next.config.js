@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-const { i18n } = require('./next-i18next.config')
 const path = require('path')
 
 // 패키지에서 가져온 데이터가 (next.js)컴포넌트를 포함하는 경우 변환 과정이 필요
@@ -12,7 +11,6 @@ const nextConfig = {
     outputFileTracingRoot: path.join(__dirname, '../../'),
   },
   swcMinify: true,
-  i18n,
   webpack: (config, { isServer }) => {
     config.module.rules.push({
       test: /\.svg$/,

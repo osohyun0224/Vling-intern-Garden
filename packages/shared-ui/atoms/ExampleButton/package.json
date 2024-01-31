@@ -1,0 +1,8 @@
+{
+  "name": "@bzznbyd/atom-example-button",
+  "main": "./ExampleButton.jsx",
+  "version": "1.0.0",
+  "dependencies": {
+    "@bzznbyd/atom-test": "*"
+  }
+}

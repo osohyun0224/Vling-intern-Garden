@@ -1,5 +1,5 @@
 {
-  "name": "@bzznbyd/template",
+  "name": "@bzznbyd/export-static-example",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -12,5 +12,8 @@
     "start": "./scripts/run.sh -t=standalone",
     "lint": "next lint"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@bzznbyd/atom-example-button": "*",
+    "@bzznbyd/atom-test": "*"
+  }
 }

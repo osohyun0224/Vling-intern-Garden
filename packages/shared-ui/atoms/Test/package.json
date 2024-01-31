@@ -1,0 +1,6 @@
+{
+  "name": "@bzznbyd/atom-test",
+  "main": "./Test.jsx",
+  "version": "1.0.0",
+  "dependencies": {}
+}

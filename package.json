@@ -2,6 +2,7 @@
   "name": "vling_template",
   "private": true,
   "scripts": {
+    "export": "turbo run export",
     "build": "turbo run build",
     "build.container": "turbo run build.container",
     "deploy": "turbo run deploy",

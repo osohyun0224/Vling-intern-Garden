@@ -3,25 +3,76 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["**"],
-      "outputs": ["**"]
-    },
-    "build.container": {
-      "dependsOn": ["^build.container"],
-      "inputs": ["**"],
+      "inputs": [
+        "scripts/**",
+        "public/**",
+        "k8s/**",
+        "!k8s/deployment/**",
+        "src/**",
+        ".env**",
+        "jsconfig.json",
+        "next.config.json",
+        "package.json"
+      ],
       "outputs": [".next/standalone/**"]
     },
+    "build.container": {
+      "cache": false,
+      "dependsOn": ["^build.container"],
+      "inputs": [
+        "scripts/**",
+        "public/**",
+        "k8s/**",
+        "!k8s/deployment/**",
+        "src/**",
+        ".env**",
+        "jsconfig.json",
+        "next.config.json",
+        "package.json"
+      ],
+      "outputs": [".next/standalone/**"]
+    },
+    "export": {
+      "cache": false,
+      "inputs": [
+        "scripts/**",
+        "public/**",
+        "k8s/**",
+        "!k8s/deployment/**",
+        "src/**",
+        ".env**",
+        "jsconfig.json",
+        "next.config.json",
+        "package.json"
+      ],
+      "outputs": ["out/**"]
+    },
     "start": {
-      "dependsOn": ["^start"]
+      "dependsOn": ["^start"],
+      "cache": false,
+      "persistent": true
     },
     "dist": {
-      "dependsOn": ["build", "^dist"]
+      "dependsOn": ["build", "^dist"],
+      "cache": false,
+      "persistent": true
     },
     "deploy": {
+      "cache": false,
       "dependsOn": ["^deploy"],
-      "inputs": ["**"]
+      "inputs": [
+        "scripts/**",
+        "public/**",
+        "k8s/**",
+        "!k8s/deployment/**",
+        "src/**",
+        ".env**",
+        "jsconfig.json",
+        "next.config.json",
+        "package.json"
+      ],
+      "outputs": [".next/standalone/**"]
     },
-    "lint": {},
     "dev": {
       "cache": false,
       "persistent": true
