@@ -5,7 +5,7 @@ const path = require('path')
 const withTM = require('next-transpile-modules')(['@bzznbyd/shared-ui'])
 
 const nextConfig = {
-  assetPrefix: `/${process.env.APP_NAME}`,
+  assetPrefix: `.`,
   output: 'export',
   experimental: {
     outputFileTracingRoot: path.join(__dirname, '../../'),
@@ -20,7 +20,7 @@ const nextConfig = {
     return config
   },
   images: {
-    path: `/${process.env.APP_NAME}/_next/image`,
+    // path: `/${process.env.APP_NAME}/_next/image`,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: [
