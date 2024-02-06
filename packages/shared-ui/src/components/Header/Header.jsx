@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import Logo from '../../../../public/images/svg/vling_logo_svg';
+import Logo from '../../../../public/images/svg/vling_logo.svg';
 
 const Header = () => {
   return (
