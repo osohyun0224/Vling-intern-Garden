@@ -1,0 +1,6 @@
+{
+    "name": "@bzznbyd/atoms-title-text", 
+    "main": "./TitleText.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
