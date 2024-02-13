@@ -1,11 +1,11 @@
 import Header  from '@bzznbyd/temp-header';
-import styles from './example.module.scss';
+import Title from '@bzznbyd/atoms-title-text';
 
 export default function Example() {
   return (
     <div>
       <Header />
-      <h1 className={styles.title}>광고주 목록</h1>
+      <Title>광고주 목록</Title>
     </div>
   );
 }
