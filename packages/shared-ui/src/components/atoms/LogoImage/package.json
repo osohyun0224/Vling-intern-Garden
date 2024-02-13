@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/atoms-logoimage",
+    "main": "./LogoImage.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  
