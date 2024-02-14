@@ -1,6 +1,7 @@
 import Header  from '@bzznbyd/temp-header';
 import Title from '@bzznbyd/atoms-title-text';
 import IntroText from '@bzznbyd/atoms-intro-text';
+import SearchBar from '@bzznbyd/temp-searchbar';
 
 export default function Example() {
   return (
@@ -8,6 +9,7 @@ export default function Example() {
       <Header />
       <Title>광고주 목록</Title>
       <IntroText />
+      <SearchBar />
     </div>
   );
 }
