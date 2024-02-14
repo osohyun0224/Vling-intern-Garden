@@ -13,7 +13,7 @@ const SearchBar = () => {
           placeholder="관심있는 분야 / 회사를 입력하세요."
         />
       </div>
-      <button className={styles.searchButton}>검색</button> {/* 검색 버튼을 searchContainer 바깥으로 이동 */}
+      <button className={styles.searchButton}>검색</button>
     </div>
   );
 };
