@@ -5,11 +5,14 @@
     height: 40px;
     padding: 8px 10px;
     border-radius: 6px;
-    background: linear-gradient(0deg, #DFDFDF, #DFDFDF), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    background: #ffffff;
     border: 1px solid #DFDFDF;
+    margin-left: 20px;
+    margin-top: 20px;
   }
   
   .searchIcon {
+    margin-right: 10px;
   }
   
   .searchInput {
@@ -22,10 +25,10 @@
     line-height: 21px;
     letter-spacing: -0.6px;
     text-align: left;
-    background: #8B8B8B;
+    background: #ffffff;
   
     &::placeholder {
-      color: #FFFFFF;
+      color: #8B8B8B;
     }
   }
   
