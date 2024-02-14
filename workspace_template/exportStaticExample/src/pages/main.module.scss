@@ -1,0 +1,46 @@
+// main.module.scss
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: -0.6px;
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .mainButton {
+    width: 200px;
+    height: 40px;
+    padding: 14px 50px;
+    border-radius: 6px;
+    background: #FF0045;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .subButton {
+    width: 200px;
+    height: 40px;
+    padding: 14px 50px;
+    border-radius: 6px;
+    background: #FFFFFF;
+    color: #FF0045;
+    border: 1px solid #FF0045;
+    cursor: pointer;
+  }
+  
