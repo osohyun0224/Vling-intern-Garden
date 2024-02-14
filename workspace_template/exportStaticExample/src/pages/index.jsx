@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './main.module.scss';
+import styles from './index.module.scss';
 import Link from 'next/link';
 
 export default function Main() {
@@ -11,6 +11,9 @@ export default function Main() {
           <button className={styles.mainButton}>메인 프로젝트</button>
         </Link>
         <button className={styles.subButton}>서브 프로젝트</button>
+        <Link href="/example" passHref>
+          <button className={styles.mainButton}>가든의 기술 보석함</button>
+        </Link>
       </div>
     </div>
   );
