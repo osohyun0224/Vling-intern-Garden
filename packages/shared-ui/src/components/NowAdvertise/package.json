@@ -1,0 +1,8 @@
+{
+    "name": "@bzznbyd/temp-now-advertise",
+    "main": "./NowAdvertise.jsx",
+    "version": "1.0.0",
+    "dependencies": {
+    }
+  }
+  
