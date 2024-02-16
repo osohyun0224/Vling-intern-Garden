@@ -1,0 +1,28 @@
+.text {
+    font-family: Noto Sans;
+    letter-spacing: -0.6px;
+    text-align: left;
+    margin-bottom: 5px;
+  
+    &.title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 23px;
+    }
+  
+    &.info {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 22px;
+      color: #6F6F6F;
+    }
+  
+    &.authorName {
+      font-family: Inter;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 12px;
+      letter-spacing: -0.6px;
+    }
+  }
+  

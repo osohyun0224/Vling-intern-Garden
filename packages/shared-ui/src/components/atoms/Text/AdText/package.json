@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/atoms-ad-text",
+    "main": "./AdText.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  
