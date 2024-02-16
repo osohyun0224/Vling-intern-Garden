@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/atom-ad-profile-image",
+    "main": "./AdProfileImage.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  
