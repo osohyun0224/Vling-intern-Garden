@@ -1,0 +1,6 @@
+{
+    "name": "@bzznbyd/atoms-subtitle-text", 
+    "main": "./SubTitleText.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
