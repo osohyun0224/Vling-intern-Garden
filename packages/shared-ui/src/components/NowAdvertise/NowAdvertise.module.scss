@@ -7,20 +7,26 @@
   
   .imageContainer {
     position: relative;
-  }
-  
-  .adImage {
     width: 313px;
     height: 213px;
     border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .adImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .likeIcon {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -19px;
+    right: 10px;
     cursor: pointer;
   }
+  
   
   .category {
     width: 52px;

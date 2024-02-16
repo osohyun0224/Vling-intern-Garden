@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import styles from './NowAdvertise.module.scss';
-import likeIcon from '../../../../../workspace_template/exportStaticExample/public/images/png/Favorite.png';
-import likedIcon from '../../../../../workspace_template/exportStaticExample/public/images/png/Love.png';
 
 const NowAdvertise = () => {
   const [liked, setLiked] = useState(false);
@@ -14,7 +12,7 @@ const NowAdvertise = () => {
     <div className={styles.container}>
       <div className={styles.imageContainer}>
         <img src="https://via.placeholder.com/313x213" alt="Ad" className={styles.adImage} />
-        <img src={liked ? likedIcon : likeIcon} alt="Like" className={styles.likeIcon} onClick={toggleLike} />
+        <img src={liked ? "/images/png/Love.png" : "/images/png/Favorite.png"} alt="Like" className={styles.likeIcon} onClick={toggleLike} />
       </div>
       <div className={styles.category}>카테고리</div>
       <h2 className={styles.title}>광고 제목</h2>
