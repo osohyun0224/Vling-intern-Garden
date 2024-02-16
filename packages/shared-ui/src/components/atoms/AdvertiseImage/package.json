@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/atom-advertise-image",
+    "main": "./AdvertiseImage.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  
