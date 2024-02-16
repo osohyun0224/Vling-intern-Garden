@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/atom-ad-category",
+    "main": "./AdCategory.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  
