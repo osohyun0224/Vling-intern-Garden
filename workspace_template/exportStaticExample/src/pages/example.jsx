@@ -1,5 +1,6 @@
 import Header  from '@bzznbyd/temp-header';
 import Title from '@bzznbyd/atoms-title-text';
+import SubTitle from '@bzznbyd/atoms-subtitle-text';
 import IntroText from '@bzznbyd/atoms-intro-text';
 import SearchBar from '@bzznbyd/temp-searchbar';
 
@@ -10,6 +11,7 @@ export default function Example() {
       <Title>광고주 목록</Title>
       <IntroText />
       <SearchBar />
+      <SubTitle>광고주가 찾고 있어요!👀</SubTitle>
     </div>
   );
 }
