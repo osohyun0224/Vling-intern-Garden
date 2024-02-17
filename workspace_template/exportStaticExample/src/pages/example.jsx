@@ -14,7 +14,7 @@ export default function Example() {
       <IntroText />
       <SearchBar />
       <SubTitle>광고주가 찾고 있어요!<span className={styles.tossface}> 👀</span></SubTitle>
-      <NowAdvertise></NowAdvertise>
+      <NowAdvertise/>
     </div>
   );
 }
