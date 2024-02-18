@@ -4,6 +4,7 @@ import SubTitle from '@bzznbyd/atoms-subtitle-text';
 import IntroText from '@bzznbyd/atoms-intro-text';
 import SearchBar from '@bzznbyd/temp-searchbar';
 import NowAdvertise from '@bzznbyd/temp-now-advertise';
+import Advertiselist from '@bzznbyd/temp-advertiser-list';
 import styles from'./example.module.scss';
 
 export default function Example() {
@@ -15,6 +16,7 @@ export default function Example() {
       <SearchBar />
       <SubTitle>광고주가 찾고 있어요!<span className={styles.tossface}> 👀</span></SubTitle>
       <NowAdvertise/>
+      <Advertiselist/>
     </div>
   );
 }
