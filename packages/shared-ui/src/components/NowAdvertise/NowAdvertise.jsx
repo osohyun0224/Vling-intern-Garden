@@ -8,7 +8,6 @@ import AuthorImage from '@bzznbyd/atom-ad-profile-image';
 const NowAdvertise = () => {
   const [liked, setLiked] = useState(false);
   const toggleLike = () => setLiked(!liked);
-  
   const NowAdList = [
     { 
         id: 1,
@@ -51,13 +50,17 @@ const NowAdvertise = () => {
         author_name: "유제(Yuje)"
     },
     ]
-
+    
   return (
     <div className={styles.container}>
       {NowAdList.map((ad, index) => (
         <div key={ad.id} className={styles.adItem} style={{ marginRight: index < NowAdList.length - 1 ? '20px' : '0' }}>
           <ImageContainer src={ad.adimage} alt="Ad" liked={liked} toggleLike={toggleLike} />
-          <Category>{ad.category.join(', ')}</Category>
+          <div className={styles.categories}>
+            {ad.category.map((cat, catIndex) => (
+              <Category key={catIndex}>{cat}</Category>
+            ))}
+          </div>
           <Text type="title">{ad.title}</Text>
           <Text type="info">{ad.info_date}</Text>
           <Text type="info">{ad.info_money.toLocaleString()}원</Text>

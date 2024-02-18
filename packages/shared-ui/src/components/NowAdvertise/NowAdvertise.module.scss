@@ -42,6 +42,12 @@
     color: #FF0045;
   }
   
+  .categories {
+    display: flex;
+    gap: 10px;
+  }
+  
+  
   .title, .info {
     font-family: Noto Sans;
     font-size: 15px;
