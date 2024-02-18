@@ -66,7 +66,7 @@ const NowAdvertise = () => {
     return (
       <div className={styles.container}>
         {ads.map((ad, index) => (
-          <div key={ad.id} className={styles.adItem} style={{ marginRight: index < ads.length - 1 ? '20px' : '0' }}>
+          <div key={ad.id} className={styles.adItem} style={{ marginRight: index < ads.length - 1 ? '40px' : '0' }}>
             <ImageContainer 
               src={ad.adimage} 
               alt="Ad" 
