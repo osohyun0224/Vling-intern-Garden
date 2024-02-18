@@ -79,8 +79,8 @@ const NowAdvertise = () => {
               ))}
             </div>
             <Text type="title">{ad.title}</Text>
-            <Text type="info">{ad.info_date}</Text>
-            <Text type="info">{ad.info_money.toLocaleString()}원</Text>
+            <Text type="info"><span className={styles.tossface}> 마감 기한 📅 </span>{ad.info_date}</Text>
+            <Text type="info"><span className={styles.tossface}> 광고 예산 💰 </span>{ad.info_money.toLocaleString()}원</Text>
             <div className={styles.author}>
               <AuthorImage src={ad.author_image} alt="Author" />
               <Text type="authorName">{ad.author_name}</Text>
