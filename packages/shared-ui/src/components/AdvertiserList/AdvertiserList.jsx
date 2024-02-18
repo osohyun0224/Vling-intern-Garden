@@ -18,21 +18,24 @@ const AdvertiserList = () => {
         <span>회사 상세 정보</span>
         <span>광고 제안 바로가기</span>
       </div>
-      <hr className={styles.divider} style={{ top: '850.96px' }} />
+      <hr className={styles.divider} />
 
       {advertisers.map((advertiser, index) => (
-        <div key={advertiser.id} className={styles.contentRow} style={{ top: `${860.96 + 100 * index}px` }}>
-          <span className={styles.listNumber}>{index + 1}</span>
-          <img src={advertiser.imageUrl} alt="Advertiser" className={styles.advertiserImage} />
-          <span className={styles.companyName}>{advertiser.companyName}</span>
-          <span className={styles.email}>{advertiser.email}</span>
-          <span className={styles.adRate}>{advertiser.adRate}</span>
-          <div className={styles.buttonGroup}>
-            <button>회사 Home</button>
-            <button>회사 상세 소개</button>
+        <React.Fragment key={advertiser.id}>
+          <div className={styles.contentRow}>
+            <span className={styles.listNumber}>{index + 1}</span>
+            <img src={advertiser.imageUrl} alt="Advertiser" className={styles.advertiserImage} />
+            <span className={styles.companyName}>{advertiser.companyName}</span>
+            <span className={styles.email}>{advertiser.email}</span>
+            <span className={styles.adRate}>{advertiser.adRate}</span>
+            <div className={styles.buttonGroup}>
+              <button>회사 Home</button>
+              <button>회사 상세 소개</button>
+            </div>
+            <button className={styles.proposalButton}>광고 제안서 작성하기</button>
           </div>
-          <button className={styles.proposalButton}>광고 제안서 작성하기</button>
-        </div>
+          {index < advertisers.length - 1 && <hr className={styles.divider} />}
+        </React.Fragment>
       ))}
     </div>
   );
