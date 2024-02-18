@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/temp-advertiser-list",
+    "main": "./AdvertiserList.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  
