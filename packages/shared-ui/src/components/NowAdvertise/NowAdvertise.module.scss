@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap;
     margin-left: 20px;
     margin-top: 10px;
   }
