@@ -3,8 +3,12 @@ import styles from './AdvertiserList.module.scss';
 
 const AdvertiserList = () => {
   const advertisers = [
-    { id: 1, companyName: '회사명 1', email: 'email1@example.com', adRate: '100,000', imageUrl: '/path/to/image1.png' },
-    { id: 2, companyName: '회사명 2', email: 'email2@example.com', adRate: '200,000', imageUrl: '/path/to/image2.png' },
+    { id: 1, companyName: 'Logitech Korea', email: 'logitech@example.com', adRate: '500,000', imageUrl: '/images/adkeyboard/logitech.png' },
+    { id: 2, companyName: 'ABKO Korea', email: 'abko@example.com', adRate: '600,000', imageUrl: '/images/adkeyboard/abko.png' },
+    { id: 3, companyName: '한성 컴퓨터', email: 'hansung@example.com', adRate: '700,000', imageUrl: '/images/adkeyboard/hansung.png' },
+    { id: 4, companyName: '삼성 SAMSUNG', email: 'samsung@example.com', adRate: '900,000', imageUrl: '/images/adkeyboard/samsung.png' },
+    { id: 5, companyName: 'Corsair', email: 'corsair@example.com', adRate: '400,000', imageUrl: '/images/adkeyboard/corsair.png' },
+    { id: 6, companyName: 'RAZUR', email: 'razur@example.com', adRate: '700,000', imageUrl: '/images/adkeyboard/razur.png' },
   ];
 
   return (
