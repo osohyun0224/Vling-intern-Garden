@@ -65,7 +65,37 @@
     font-weight: 700;
     color: #000000;
   }
-  
+
+.homeButton {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  background: #FF0045;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.detailButton {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #FF0045;
+  border: 1px solid #FF0045;
+  cursor: pointer;
+}
+
+.proposalButton {
+  width: 158px;
+  height: 40px;
+  border-radius: 5px;
+  background: #FF6671;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
   .buttonGroup {
     display: flex;
     flex-direction: column;

@@ -33,8 +33,8 @@ const AdvertiserList = () => {
             <span className={styles.email}>{advertiser.email}</span>
             <span className={styles.adRate}>{advertiser.adRate}</span>
             <div className={styles.buttonGroup}>
-              <button>회사 Home</button>
-              <button>회사 상세 소개</button>
+              <button className={styles.homeButton}>회사 Home</button>
+              <button className={styles.detailButton}>회사 상세 소개</button>
             </div>
             <button className={styles.proposalButton}>광고 제안서 작성하기</button>
           </div>
