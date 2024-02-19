@@ -3,8 +3,8 @@ import styles from './AdvertiserList.module.scss';
 import ReportModal from '../ReportModal/reportmodal';
 
 const AdvertiserList = () => {
-  const [showModal, setShowModal] = useState(false); // 모달 표시 상태
-  const toggleModal = () => setShowModal(!showModal); // 모달 토글 함수
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => setShowModal(!showModal);
 
   const advertisers = [
     { id: 1, companyName: 'Logitech Korea', email: 'logitech@example.com', adRate: '500,000', imageUrl: '/images/adkeyboard/logitech.png' },
