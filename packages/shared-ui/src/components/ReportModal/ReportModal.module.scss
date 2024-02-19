@@ -7,14 +7,19 @@
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    overflow-y: auto;
   }
   
   .modal {
     width: 1400px;
-    height: 2630px;
+    height: 2000px;
     background: #FFFFFF;
     border-radius: 30px;
     padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-y: auto;
   }
   
