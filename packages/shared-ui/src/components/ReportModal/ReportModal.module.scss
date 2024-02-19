@@ -40,3 +40,21 @@
   letter-spacing: 0.3199999928474426px;
   text-align: center;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.title{
+    margin-left:500px;
+    margin-top:10px;
+}
+  
+.closeButton {
+    cursor: pointer;
+    width: 30px; 
+    height: 30px;
+}
+  

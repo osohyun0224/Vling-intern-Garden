@@ -18,9 +18,11 @@ const ReportModal = ({ show, onClose }) => {
   return (
     <div className={styles.modalBackdrop} onClick={onClose}>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
-      <div className={styles.title} >광고 제안서</div>
-      <hr className={styles.divider} />
-        <button onClick={onClose}>Close</button>
+        <div className={styles.header}>
+          <div className={styles.title}>광고 제안서</div>
+          <img src={'/images/png/Close.png'} alt="Close" className={styles.closeButton} onClick={onClose} />
+        </div>
+        <hr className={styles.divider} />
       </div>
     </div>
   );
