@@ -41,6 +41,7 @@ const AdvertiserList = () => {
           {index < advertisers.length - 1 && <hr className={styles.divider} />}
         </React.Fragment>
       ))}
+      <hr className={styles.divider} />
     </div>
   );
 };
