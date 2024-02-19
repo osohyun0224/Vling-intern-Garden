@@ -33,6 +33,7 @@
   "dependencies": {
     "@apollo/client": "^3.9.2",
     "graphql": "^16.8.1",
+    "jspdf": "^2.5.1",
     "next": "^12.3.4",
     "next-i18next": "^11.0.0",
     "next-transpile-modules": "^10.0.1",

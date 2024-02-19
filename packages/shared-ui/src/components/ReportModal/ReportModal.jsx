@@ -26,6 +26,7 @@ const ReportModal = ({ show, onClose }) => {
         <hr className={styles.divider} />
         <div className={styles.reporttitle}>채널 정보</div>
         <ChannelHeader/>
+        <button className={styles.button}>pdf로 저장하기</button>
       </div>
     </div>
   )
