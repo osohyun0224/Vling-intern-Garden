@@ -1,25 +1,42 @@
 .modalBackdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 20px;
-    overflow-y: auto;
-  }
-  
-  .modal {
-    width: 1400px;
-    height: 2000px;
-    background: #FFFFFF;
-    border-radius: 30px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    overflow-y: auto;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modal {
+  width: 1200px;
+  height: 2000px;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.divider {
+  width: 100%;
+  margin-left: -20px;
+  border: 1px solid #d9d9d9;
+}
+
+.title {
+  font-family: Noto Sans;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.3199999928474426px;
+  text-align: center;
+}

@@ -18,6 +18,8 @@ const ReportModal = ({ show, onClose }) => {
   return (
     <div className={styles.modalBackdrop} onClick={onClose}>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
+      <div className={styles.title} >광고 제안서</div>
+      <hr className={styles.divider} />
         <button onClick={onClose}>Close</button>
       </div>
     </div>
