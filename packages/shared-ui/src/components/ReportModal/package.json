@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/temp-report-modal",
+    "main": "./ReportModal.jsx",
+    "version": "1.0.0",
+    "dependencies": {
+    }
+}

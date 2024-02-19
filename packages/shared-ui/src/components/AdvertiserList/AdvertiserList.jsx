@@ -1,7 +1,11 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import styles from './AdvertiserList.module.scss';
+import ReportModal from '../ReportModal/reportmodal';
 
 const AdvertiserList = () => {
+  const [showModal, setShowModal] = useState(false); // 모달 표시 상태
+  const toggleModal = () => setShowModal(!showModal); // 모달 토글 함수
+
   const advertisers = [
     { id: 1, companyName: 'Logitech Korea', email: 'logitech@example.com', adRate: '500,000', imageUrl: '/images/adkeyboard/logitech.png' },
     { id: 2, companyName: 'ABKO Korea', email: 'abko@example.com', adRate: '600,000', imageUrl: '/images/adkeyboard/abko.png' },
@@ -21,6 +25,7 @@ const AdvertiserList = () => {
         <span>평균 광고 단가</span>
         <span>회사 상세 정보</span>
         <span>광고 제안 바로가기</span>
+        <ReportModal show={showModal} onClose={toggleModal} />
       </div>
       <hr className={styles.divider} />
 
@@ -36,7 +41,7 @@ const AdvertiserList = () => {
               <button className={styles.homeButton}>회사 Home</button>
               <button className={styles.detailButton}>회사 상세 소개</button>
             </div>
-            <button className={styles.proposalButton}>광고 제안서 작성하기</button>
+            <button className={styles.proposalButton} onClick={toggleModal}>광고 제안서 작성하기</button>
           </div>
           {index < advertisers.length - 1 && <hr className={styles.divider} />}
         </React.Fragment>
