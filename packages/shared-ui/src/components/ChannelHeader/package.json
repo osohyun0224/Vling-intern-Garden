@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/temp-channel-header",
+    "main": "./ChannelHeader.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  
