@@ -4,6 +4,7 @@ import html2canvas from 'html2canvas'
 import styles from './ReportModal.module.scss'
 import ChannelHeader from '@bzznbyd/temp-channel-header'
 import ReportTitleGroup from '../organisms/ReportTitleGroup/ReportTitleGroup'
+import RecentVideoStat from '../RecentVideoStat/RecentVideoStat'
 
 const ReportModal = ({ show, onClose }) => {
   const [currentDate, setCurrentDate] = useState('')
@@ -64,6 +65,7 @@ const ReportModal = ({ show, onClose }) => {
         <ReportTitleGroup currentDate={currentDate} /> 
         <ChannelHeader />
         <div className={styles.videotitle}>채널 영상 분석</div>
+        <RecentVideoStat/>
         <button className={styles.button} onClick={savePdf}>
           pdf로 저장하기
         </button>

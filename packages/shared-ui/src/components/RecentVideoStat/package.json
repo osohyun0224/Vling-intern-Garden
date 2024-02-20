@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/org-report-recent-video-stat",
+    "main": "./RecentVideoStat.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  

@@ -19,3 +19,6 @@ export const getChannel = gql`
     }
   }
 `
+
+// export const getVideo = gql`
+// `
