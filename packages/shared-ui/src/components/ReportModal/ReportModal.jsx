@@ -1,12 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import styles from './ReportModal.module.scss'
 import ChannelHeader from '@bzznbyd/temp-channel-header'
 
 const ReportModal = ({ show, onClose }) => {
+  const [currentDate, setCurrentDate] = useState('')
+
   useEffect(() => {
     if (show) {
+      const today = new Date()
+      const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}` // 년-월-일 형식으로 날짜 형식화
+      setCurrentDate(formattedDate)
       document.body.style.overflow = 'hidden'
     }
     return () => {
@@ -59,7 +64,7 @@ const ReportModal = ({ show, onClose }) => {
           <div className={styles.reporttitle}>채널 정보</div>
           <div className={styles.reportdategroup}>
             <div className={styles.reportdatetitle}>제안서 작성 날짜</div>
-            <div className={styles.reportdate}>2024-02-24</div>
+            <div className={styles.reportdate}>{currentDate}</div> 
           </div>
         </div>
 
