@@ -36,7 +36,7 @@
 }
 
 .channelCategories {
-margin-top:20px;
+  margin-top:20px;
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -84,8 +84,9 @@ margin-top:20px;
 .subscribers, .algorithmScore {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
+
 
 .statIcon {
   width: 24px;
@@ -95,7 +96,7 @@ margin-top:20px;
 
 .statTitle {
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.6px;
@@ -128,4 +129,40 @@ margin-top:20px;
   flex-grow: 1;
   padding-right: 20px;
 }
+
+.vlingDetailButton {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  background: #FF0045;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.statYIcon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  margin-left: -10px;
+}
+
+.goYouTubeButton {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #FF0045;
+  border: 1px solid #FF0045;
+  cursor: pointer;
+  padding-top: -200px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 20px; 
+}
+
 
