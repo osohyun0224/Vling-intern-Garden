@@ -18,7 +18,7 @@ const ReportModal = ({ show, onClose }) => {
     const modalContent = document.getElementById('modalContent')
     html2canvas(modalContent, {
       windowHeight: modalContent.scrollHeight,
-      windowWidth: modalContent.scrollWidth
+      windowWidth: modalContent.scrollWidth,
     }).then((canvas) => {
       const imgData = canvas.toDataURL('image/png')
       const imgWidth = 210
@@ -55,7 +55,14 @@ const ReportModal = ({ show, onClose }) => {
           <img src={'/images/png/Close.png'} alt="Close" className={styles.closeButton} onClick={onClose} />
         </div>
         <hr className={styles.divider} />
-        <div className={styles.reporttitle}>채널 정보</div>
+        <div className={styles.reporttitlegroup}>
+          <div className={styles.reporttitle}>채널 정보</div>
+          <div className={styles.reportdategroup}>
+            <div className={styles.reportdatetitle}>제안서 작성 날짜</div>
+            <div className={styles.reportdate}>2024-02-24</div>
+          </div>
+        </div>
+
         <ChannelHeader />
         <button className={styles.button} onClick={savePdf}>
           pdf로 저장하기

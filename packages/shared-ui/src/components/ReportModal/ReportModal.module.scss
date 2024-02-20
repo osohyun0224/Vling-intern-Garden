@@ -58,6 +58,20 @@
   margin-right: 20px;
 }
 
+.reporttitlegroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.reportdategroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right:10px;
+}
+
 .reporttitle {
   font-family: Noto Sans;
   font-size: 20px;
@@ -65,7 +79,26 @@
   line-height: 28px;
   letter-spacing: 0.3199999928474426px;
   text-align: left;
-  color:#3f3f3f;
-  margin-left: 5px;
-  margin-top:10px;
+  color: #3f3f3f;
+}
+
+.reportdatetitle {
+  font-family: Noto Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.3199999928474426px;
+  text-align: right;
+  color: #3f3f3f;
+  margin-right:10px;
+}
+
+.reportdate {
+  font-family: Noto Sans KR;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.6000000238418579px;
+  text-align: right;
+  color: #3d3d3d;
 }
