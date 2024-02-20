@@ -16,10 +16,7 @@ const ChannelHeader = () => {
     return <p>Error: {error.message}</p>; 
   }
 
-  const channelName = data.channel.title;
-
-  const channelImage =
-    'https://yt3.googleusercontent.com/ytc/AIf8zZRsiaDKzz7z9MLYs3wnZ1o7-L-W9SPG9X6RQ0XM=s176-c-k-c0x00ffffff-no-rj'
+  const { title: channelName, thumbnails: channelImage } = data.channel;
   const channelCategories = ['Vlog/일상', '지식/정보', 'IT/과학기술']
 
   return (
