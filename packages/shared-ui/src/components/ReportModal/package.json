@@ -3,5 +3,6 @@
     "main": "./ReportModal.jsx",
     "version": "1.0.0",
     "dependencies": {
+        "@bzznbyd/org-report-title-group": "*"
     }
 }

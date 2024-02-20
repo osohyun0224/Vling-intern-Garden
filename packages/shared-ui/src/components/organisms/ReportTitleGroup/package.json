@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/org-report-title-group",
+    "main": "./ReportTitleGroup.jsx",
+    "version": "1.0.0",
+    "dependencies": {}
+  }
+  
