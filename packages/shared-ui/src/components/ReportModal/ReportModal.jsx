@@ -63,6 +63,7 @@ const ReportModal = ({ show, onClose }) => {
         <hr className={styles.divider} />
         <ReportTitleGroup currentDate={currentDate} /> 
         <ChannelHeader />
+        <div className={styles.videotitle}>채널 영상 분석</div>
         <button className={styles.button} onClick={savePdf}>
           pdf로 저장하기
         </button>

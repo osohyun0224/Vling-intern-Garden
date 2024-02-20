@@ -1,10 +1,25 @@
-import React from 'react'
-import styles from './ChannelHeader.module.scss'
+import React from 'react';
+import { useQuery } from '@apollo/client';
+import styles from './ChannelHeader.module.scss';
+import { getChannel } from '../../../../shared-gql/channel/channel.gpl';
 
 const ChannelHeader = () => {
+  const channelId = "UCZ3dxObRPEJzoryEyQqmhWg"; 
+
+  const { data, loading, error } = useQuery(getChannel, {
+    variables: { channelId },
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) {
+    console.error(error);
+    return <p>Error: {error.message}</p>; 
+  }
+
+  const channelName = data.channel.title;
+
   const channelImage =
     'https://yt3.googleusercontent.com/ytc/AIf8zZRsiaDKzz7z9MLYs3wnZ1o7-L-W9SPG9X6RQ0XM=s176-c-k-c0x00ffffff-no-rj'
-  const channelName = '판교 뚜벅쵸'
   const channelCategories = ['Vlog/일상', '지식/정보', 'IT/과학기술']
 
   return (

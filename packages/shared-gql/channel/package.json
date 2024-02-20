@@ -1,0 +1,7 @@
+{
+    "name": "@bzznbyd/shared-gql-channel",
+    "main": "./Channel.gql.js",
+    "version": "1.0.0",
+    "license": "MIT"
+  }
+  
