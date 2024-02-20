@@ -84,9 +84,14 @@
 .subscribers, .algorithmScore {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
+.viewerEngagement, .algorithmScore {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
 .statIcon {
   width: 24px;
@@ -123,11 +128,13 @@
 
 .leftStats {
   flex-grow: 1;
+  margin-left: 20px;
 }
 
 .rightStats {
   flex-grow: 1;
   padding-right: 20px;
+  margin-right: 40px;
 }
 
 .vlingDetailButton {

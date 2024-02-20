@@ -26,7 +26,7 @@ const ChannelHeader = () => {
       <div className={styles.leftStats}>
         <div className={styles.subscribers}>
           <img src="/images/png/People.png" alt="Subscribers" className={styles.statIcon} />
-          <span className={styles.statTitle}>구독자 수</span>
+          <span className={styles.statTitle}>채널의 구독자 수 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <span className={styles.statValue}>4만</span>
         </div>
         <div className={styles.algorithmScore}>
