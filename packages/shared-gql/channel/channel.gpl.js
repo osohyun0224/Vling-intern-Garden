@@ -12,13 +12,24 @@ export const getChannel = gql`
       algosinLikesPerVideo
       # 구독자 수
       subscriberCount
-      # 활성도 
+      # 활성도
       activePercentLevel
       # 참여도
       reactRatioLevel
+      videoCountInfo {
+        #영상을 며칠에 한번씩 올리는지 평균을 계산하기 위한 것 > 5.83일
+        videoYearCount
+      }
+      videoStatIn90Days {
+        #총 영상의 개수
+        sumVideoCount
+        #평균 조회수
+        avgViewCountPerVideo
+        #평균 좋아요 수
+        avgLikeCountPerVideo
+        #평균 댓글 수
+        avgCommentCountPerVideo
+      }
     }
   }
 `
-
-// export const getVideo = gql`
-// `
