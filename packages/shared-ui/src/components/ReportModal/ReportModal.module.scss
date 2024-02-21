@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 20px;
+  padding-top: 30px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -67,4 +67,12 @@
   text-align: left;
   color: #3f3f3f;
   margin-top:10px;
+}
+
+.videoStatsContainer {
+  display: flex;
+  justify-content: center; // 컴포넌트를 가운데 정렬합니다.
+  align-items: flex-start; // 컴포넌트를 상단에 정렬합니다.
+  margin-left:-10px;
+  gap: 30px; // 컴포넌트 사이의 간격을 20px로 설정합니다.
 }

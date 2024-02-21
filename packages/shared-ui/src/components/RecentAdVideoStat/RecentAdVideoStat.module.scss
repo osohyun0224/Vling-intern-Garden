@@ -1,0 +1,42 @@
+.recentAdVideoStat {
+    width: 620px;
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid #c1c1c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    
+    .title {
+      font-family: Inter;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0.32px;
+      text-align: left;
+      color: #3f3f3f;
+      width: 100%;
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+  
+    .divider {
+      width: 100%;
+      border-bottom: 1px solid #c1c1c1;
+    }
+  
+    .subtitle {
+      font-family: Inter;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0.32px;
+      text-align: left;
+      color: #3f3f3f;
+      width: 100%;
+      padding-left: 20px;
+      margin-top: 5px;
+      margin-bottom: -50px;
+    }
+}  
