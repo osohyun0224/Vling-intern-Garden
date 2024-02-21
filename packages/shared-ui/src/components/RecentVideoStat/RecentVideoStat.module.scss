@@ -28,10 +28,10 @@
 
   .content {
     width: 100%;
-    height: 400px; // 컨텐츠 영역의 높이를 지정하여 사분면 요소들이 위치할 공간을 확보합니다.
+    height: 400px;
     display: flex;
     position: relative;
-    align-items: center; // 가운데 점선을 기준으로 요소들을 중앙 정렬합니다.
+    align-items: center;
 
     &:before {
       content: '';
@@ -82,7 +82,7 @@
 
   //사분면 각각의 간격 제어
   &.q2{
-    margin-right: 70px;
+    margin-right: 50px;
   }
 
   //상하 간격 조정
@@ -117,3 +117,23 @@
     margin-top: 10px;
   }
 }
+
+//돌아가는 로딩 스타일
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingSpinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #FF0045; 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+

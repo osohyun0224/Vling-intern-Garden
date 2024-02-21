@@ -10,16 +10,14 @@ const RecentVideoStat = () => {
     variables: { channelId },
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className={styles.loadingSpinner}></div>;
   if (error) return <p>Error: {error.message}</p>;
 
-  // 평균 조회수를 만 단위로 변환
   const formatAverageViews = (views) => {
     const viewsInTenThousands = views / 10000;
     return viewsInTenThousands >= 1 ? `${Math.floor(viewsInTenThousands)}만` : `${viewsInTenThousands.toFixed(1)}만`;
   };
 
-  // 평균 댓글 수와 평균 좋아요 수를 소수점 없이 표시
   const formatAverageCounts = (count) => Math.floor(count);
 
   const averageViews = formatAverageViews(data.channel.videoStatIn90Days.avgViewCountPerVideo);
