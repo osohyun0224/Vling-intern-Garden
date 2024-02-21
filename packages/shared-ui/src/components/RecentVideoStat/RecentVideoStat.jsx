@@ -13,10 +13,19 @@ const RecentVideoStat = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const averageViews = data.channel.videoStatIn90Days.avgViewCountPerVideo;
+  // 평균 조회수를 만 단위로 변환
+  const formatAverageViews = (views) => {
+    const viewsInTenThousands = views / 10000;
+    return viewsInTenThousands >= 1 ? `${Math.floor(viewsInTenThousands)}만` : `${viewsInTenThousands.toFixed(1)}만`;
+  };
+
+  // 평균 댓글 수와 평균 좋아요 수를 소수점 없이 표시
+  const formatAverageCounts = (count) => Math.floor(count);
+
+  const averageViews = formatAverageViews(data.channel.videoStatIn90Days.avgViewCountPerVideo);
   const videoCount = data.channel.videoStatIn90Days.sumVideoCount;
-  const averageComments = data.channel.videoStatIn90Days.avgCommentCountPerVideo;
-  const averageLikes = data.channel.videoStatIn90Days.avgLikeCountPerVideo;
+  const averageComments = formatAverageCounts(data.channel.videoStatIn90Days.avgCommentCountPerVideo);
+  const averageLikes = formatAverageCounts(data.channel.videoStatIn90Days.avgLikeCountPerVideo);
 
   return (
     <div className={styles.recentVideoStat}>

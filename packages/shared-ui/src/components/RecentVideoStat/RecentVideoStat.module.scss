@@ -84,6 +84,7 @@
   &.q2{
     margin-right: 70px;
   }
+
   //상하 간격 조정
   &.q1,
   &.q2 {
@@ -107,12 +108,12 @@
 
   .title {
     @extend .quadrantTitle;
-    align-self: flex-end; // 제목을 각 사분면의 시작 지점으로 정렬합니다.
-    margin: 0; // 기본 마진을 제거합니다.
+    align-self: flex-end;
+    margin: 0;
   }
 
   .data {
     @extend .quadrantData;
-    margin-top: 10px; // 제목과 데이터 사이에 적절한 간격을 제공합니다.
+    margin-top: 10px;
   }
 }
