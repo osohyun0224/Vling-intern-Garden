@@ -3,6 +3,32 @@ import { useQuery } from '@apollo/client';
 import styles from './RecentVideoStat.module.scss';
 import { getChannel } from '../../../../shared-gql/channel/channel.gpl';
 
+//데이터 계산하는 로직 추가
+const classifyAverageViews = (views) => {
+  const viewsInTenThousands = views / 10000;
+  if (viewsInTenThousands >= 1) return "많음";
+  if (viewsInTenThousands >= 0.7 && viewsInTenThousands < 1) return "보통";
+  return "낮음";
+};
+
+const classifyVideoCount = (count) => {
+  if (count > 14) return "많음";
+  if (count >= 10 && count <= 14) return "보통";
+  return "낮음";
+};
+
+const classifyAverageComments = (comments) => {
+  if (comments > 199) return "많음";
+  if (comments >= 100 && comments <= 199) return "보통";
+  return "낮음";
+};
+
+const classifyAverageLikes = (likes) => {
+  if (likes > 99) return "많음";
+  if (likes >= 50 && likes <= 99) return "보통";
+  return "낮음";
+};
+
 const RecentVideoStat = () => {
   const channelId = "UCZ3dxObRPEJzoryEyQqmhWg";
 
@@ -25,26 +51,38 @@ const RecentVideoStat = () => {
   const averageComments = formatAverageCounts(data.channel.videoStatIn90Days.avgCommentCountPerVideo);
   const averageLikes = formatAverageCounts(data.channel.videoStatIn90Days.avgLikeCountPerVideo);
 
+
+  const viewsClassification = classifyAverageViews(data.channel.videoStatIn90Days.avgViewCountPerVideo);
+  const videoCountClassification = classifyVideoCount(data.channel.videoStatIn90Days.sumVideoCount);
+  const commentsClassification = classifyAverageComments(data.channel.videoStatIn90Days.avgCommentCountPerVideo);
+  const likesClassification = classifyAverageLikes(data.channel.videoStatIn90Days.avgLikeCountPerVideo);
+
   return (
     <div className={styles.recentVideoStat}>
       <div className={styles.title}>최근 3개월 영상 통계 데이터</div>
       <div className={styles.divider}></div>
+    
       <div className={styles.content}>
         <div className={`${styles.quadrant} ${styles.q1}`}>
           <div className={styles.title}>평균 조회수</div>
           <div className={styles.data}>{averageViews}</div>
+          <div className={styles.data}>{viewsClassification}</div>
         </div>
         <div className={`${styles.quadrant} ${styles.q2}`}>
           <div className={styles.title}>영상 수</div>
           <div className={styles.data}>{videoCount}</div>
+          <div className={styles.data}>{videoCountClassification}</div>
+          
         </div>
         <div className={`${styles.quadrant} ${styles.q3}`}>
           <div className={styles.title}>평균 댓글 수</div>
           <div className={styles.data}>{averageComments}</div>
+          <div className={styles.data}>{commentsClassification}</div>
         </div>
         <div className={`${styles.quadrant} ${styles.q4}`}>
           <div className={styles.title}>평균 좋아요 수</div>
           <div className={styles.data}>{averageLikes}</div>
+          <div className={styles.data}>{likesClassification}</div>
         </div>
       </div>
     </div>

@@ -78,22 +78,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 20px;
 
   //사분면 각각의 간격 제어
   &.q2{
-    margin-right: 50px;
+    margin-right: 30px;
   }
 
   //상하 간격 조정
   &.q1,
   &.q2 {
-    bottom: 100px;
+    bottom: 230px;
   }
 
   &.q3,
   &.q4 {
-    top: 80px;
+    top: 200px;
   }
 
   &.q1,
