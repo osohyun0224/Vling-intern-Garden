@@ -29,6 +29,14 @@ const classifyAverageLikes = (likes) => {
   return "낮음";
 };
 
+const calculateUploadFrequency = (videoYearCount) => {
+  const totalVideos = videoYearCount.reduce((acc, { count }) => acc + count, 0);
+  const daysInYear = 365; // 윤년을 고려하지 않는 경우
+  const averageFrequency = daysInYear / totalVideos;
+  return averageFrequency.toFixed(1); // 소수점 첫째 자리까지 반올림
+};
+
+
 const RecentVideoStat = () => {
   const channelId = "UCZ3dxObRPEJzoryEyQqmhWg";
 
@@ -56,12 +64,13 @@ const RecentVideoStat = () => {
   const videoCountClassification = classifyVideoCount(data.channel.videoStatIn90Days.sumVideoCount);
   const commentsClassification = classifyAverageComments(data.channel.videoStatIn90Days.avgCommentCountPerVideo);
   const likesClassification = classifyAverageLikes(data.channel.videoStatIn90Days.avgLikeCountPerVideo);
+  const uploadFrequency = calculateUploadFrequency(data.channel.videoCountInfo.videoYearCount);
 
   return (
     <div className={styles.recentVideoStat}>
       <div className={styles.title}>최근 3개월 영상 통계 데이터</div>
       <div className={styles.divider}></div>
-    
+      <div className={styles.subtitle}>* 동일 카테고리 및 구독자 수 채널 통계 기반</div>
       <div className={styles.content}>
         <div className={`${styles.quadrant} ${styles.q1}`}>
           <div className={styles.title}>평균 조회수</div>
@@ -84,6 +93,8 @@ const RecentVideoStat = () => {
           <div className={styles.data}>{averageLikes}</div>
           <div className={styles.data}>{likesClassification}</div>
         </div>
+        <div className={styles.secondtitle}>평균 영상 업로드 주기</div>
+        <div className={styles.yeardata}>{uploadFrequency}일/1년</div>
       </div>
     </div>
   );
