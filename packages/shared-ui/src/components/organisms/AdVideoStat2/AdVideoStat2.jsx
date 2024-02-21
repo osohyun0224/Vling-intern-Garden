@@ -23,26 +23,26 @@ const AdVideoStat2 = () => {
   return (
     <div className={styles.container}>
       <img src={videoData.thumbnails} alt="Thumbnail" className={styles.thumbnail} />
-      <div className={styles.title}>{videoData.title.length > 15 ? `${videoData.title.substring(0, 15)}...` : videoData.title}</div>
+      <div className={styles.title}>{videoData.title.length > 30 ? `${videoData.title.substring(0, 30)}...` : videoData.title}</div>
       <div className={styles.statRow}>
-        <div className={styles.statItem}>조회 수</div>
-        <div className={styles.statData}>{videoData.viewCount}</div>
+        <span className={styles.statItem}>조회 수</span>
+        <span className={styles.statData}>{videoData.viewCount}</span>
       </div>
       <div className={styles.statRow}>
-        <div className={styles.statItem}>구독자 대비 조회수</div>
-        <div className={styles.statData}>{viewsPerSubscriber}%</div>
+        <span className={styles.statItem}>구독자 대비 조회수</span>
+        <span className={styles.statData}>{viewsPerSubscriber}%</span>
       </div>
       <div className={styles.statRow}>
-        <div className={styles.statItem}>댓글 참여율</div>
-        <div className={styles.statData}>{commentEngagementRate}%</div>
+        <span className={styles.statItem}>댓글 참여율</span>
+        <span className={styles.statData}>{commentEngagementRate}%</span>
       </div>
       <div className={styles.statRow}>
-        <div className={styles.statItem}>좋아요 참여율</div>
-        <div className={styles.statData}>{likeEngagementRate}%</div>
+        <span className={styles.statItem}>좋아요 참여율</span>
+        <span className={styles.statData}>{likeEngagementRate}%</span>
       </div>
       <div className={styles.statRow}>
-        <div className={styles.statItem}>알고리즘 스코어</div>
-        <div className={styles.statData}>{videoData.algosinLikePercentile}</div>
+        <span className={styles.statItem}>알고리즘 스코어</span>
+        <span className={styles.statData}>{videoData.algosinLikePercentile}</span>
       </div>
     </div>
   );
