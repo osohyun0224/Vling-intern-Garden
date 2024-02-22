@@ -1,0 +1,87 @@
+.RevenueAnalysis {
+  width: 620px;
+  height: 500px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+
+  .title {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+    text-align: center;
+    color: #3f3f3f;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .divider {
+    width: 100%;
+    border-bottom: 1px solid #c1c1c1;
+  }
+
+  .viewTitleText {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.3199999928474426px;
+    text-align: left;
+    color: #6f6f6f;
+  }
+
+  .viewRevenueText {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.3199999928474426px;
+    text-align: left;
+    color: #3d3d3d;
+  }
+
+  .verticalDivider {
+    height: 100px;
+    width: 1px;
+    background-color: #000;
+    margin: 0 40px;
+  }
+
+  .revenueGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .verticalDivider {
+    height: 100%;
+    width: 1px;
+    background-color: #000;
+    margin: 0 40px;
+  }
+
+  .generalVideoGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .revenueText{
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.3199999928474426px;
+    text-align: left;
+    color: #3d3d3d;
+    margin-top: 60px;
+  }
+}

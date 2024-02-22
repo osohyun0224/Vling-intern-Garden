@@ -42,6 +42,17 @@ export const getChannel = gql`
         min
         percent
       }
+      # 광고 단가 30일간 일일 조회수 평균
+      dailyAverageViewCount
+      # 위의 일일 조회수 평균에서 쇼츠랑 일반 영상 비율을 나타내는 것
+      # dailyAverageViewCount * shorts = 일일 쇼츠 조회수 평균 값
+      # dailyAverageViewCount * normal = 일일 일반 영상 조회수 평균 값
+      viewCountRatioInVideo30 {
+        # 쇼츠의 비율
+        shorts
+        # 일반 영상의 비율
+        normal
+      }
     }
     videos(videoIds: $videoIds) {
       # 해당 영상의 조회수

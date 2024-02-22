@@ -7,7 +7,7 @@ import ReportTitleGroup from '../organisms/ReportTitleGroup/ReportTitleGroup'
 import RecentVideoStat from '../RecentVideoStat/RecentVideoStat'
 import RecentAdVideoStat from '../RecentAdVideoStat/RecentAdVideoStat'
 import ViewerStat from '../ViewerStat/ViewerStat'
-
+import RevenueAnalysis from '../RevenueAnalysis/RevenueAnalysis'
 const ReportModal = ({ show, onClose }) => {
   const [currentDate, setCurrentDate] = useState('')
 
@@ -64,21 +64,24 @@ const ReportModal = ({ show, onClose }) => {
           <img src={'/images/png/Close.png'} alt="Close" className={styles.closeButton} onClick={onClose} />
         </div>
         <hr className={styles.divider} />
-        <ReportTitleGroup currentDate={currentDate} /> 
+        <ReportTitleGroup currentDate={currentDate} />
         <ChannelHeader />
         <div className={styles.videotitle}>채널 영상 분석</div>
         <div className={styles.videoStatsContainer}>
-          <RecentVideoStat/>
-          <RecentAdVideoStat/>
+          <RecentVideoStat />
+          <RecentAdVideoStat />
         </div>
         <div className={styles.viewertitle}>시청자 분석</div>
-         <ViewerStat/>
+        <div className={styles.videoStatsContainer}>
+          <ViewerStat />
+          <RevenueAnalysis />
+        </div>
         <button className={styles.button} onClick={savePdf}>
           pdf로 저장하기
         </button>
       </div>
     </div>
-  )  
+  )
 }
 
 export default ReportModal
