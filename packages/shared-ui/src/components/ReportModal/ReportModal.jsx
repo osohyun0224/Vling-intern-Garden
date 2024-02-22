@@ -6,6 +6,7 @@ import ChannelHeader from '@bzznbyd/temp-channel-header'
 import ReportTitleGroup from '../organisms/ReportTitleGroup/ReportTitleGroup'
 import RecentVideoStat from '../RecentVideoStat/RecentVideoStat'
 import RecentAdVideoStat from '../RecentAdVideoStat/RecentAdVideoStat'
+import ViewerStat from '../ViewerStat/ViewerStat'
 
 const ReportModal = ({ show, onClose }) => {
   const [currentDate, setCurrentDate] = useState('')
@@ -70,6 +71,8 @@ const ReportModal = ({ show, onClose }) => {
           <RecentVideoStat/>
           <RecentAdVideoStat/>
         </div>
+        <div className={styles.viewertitle}>시청자 분석</div>
+         <ViewerStat/>
         <button className={styles.button} onClick={savePdf}>
           pdf로 저장하기
         </button>

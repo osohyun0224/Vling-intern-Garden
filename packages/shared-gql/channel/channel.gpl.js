@@ -31,22 +31,27 @@ export const getChannel = gql`
         #평균 댓글 수
         avgCommentCountPerVideo
       }
-    }
-      videos(videoIds: $videoIds) {
-        # 해당 영상의 조회수
-        viewCount
-        # 해당 영상의 알고리즘 스코어
-        algosinLikePercentile
-        # 해당 영상의 썸네일
-        thumbnails
-        # 해당 영상의 제목
-        title
-        # 해당 영상 채널의 구독자 수
-        subscriberCount
-        # 해당 영상의 누적 조회수
-        likeCount
-        # 해당 영상의 누적 댓글 수
-        commentCount
+      # 시청자 분석의 시청자 성별
+      genderPercent {
+        F
+        M
       }
     }
+    videos(videoIds: $videoIds) {
+      # 해당 영상의 조회수
+      viewCount
+      # 해당 영상의 알고리즘 스코어
+      algosinLikePercentile
+      # 해당 영상의 썸네일
+      thumbnails
+      # 해당 영상의 제목
+      title
+      # 해당 영상 채널의 구독자 수
+      subscriberCount
+      # 해당 영상의 누적 조회수
+      likeCount
+      # 해당 영상의 누적 댓글 수
+      commentCount
+    }
+  }
 `
