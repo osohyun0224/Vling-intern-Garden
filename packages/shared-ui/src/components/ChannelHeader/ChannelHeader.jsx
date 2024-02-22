@@ -19,7 +19,7 @@ const ChannelHeader = () => {
     variables: { channelId },
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className={styles.loadingSpinner}></div>;
   if (error) {
     console.error(error);
     return <p>Error: {error.message}</p>; 

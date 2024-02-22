@@ -10,7 +10,7 @@ const AdVideoStat2 = () => {
     variables: { channelId: "UCZ3dxObRPEJzoryEyQqmhWg", videoIds: [videoId] },
   });
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className={styles.loadingSpinner}></div>;
   if (error) return <div>Error: {error.message}</div>;
 
   const videoData = data.videos[0];
