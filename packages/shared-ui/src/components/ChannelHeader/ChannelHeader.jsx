@@ -13,7 +13,7 @@ const levelMapping = {
 };
 
 const ChannelHeader = () => {
-  const channelId = "UCZ3dxObRPEJzoryEyQqmhWg"; 
+  const channelId = "UCZ3dxObRPEJzoryEyQqmhWg";
 
   const { data, loading, error } = useQuery(getChannel, {
     variables: { channelId },
