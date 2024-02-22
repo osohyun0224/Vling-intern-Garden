@@ -1,68 +1,121 @@
 .viewerStat {
-    width: 500px;
-    height: auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+
+  .title {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+    text-align: center;
+    color: #3f3f3f;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .divider {
+    width: 100%;
+    border-bottom: 1px solid #c1c1c1;
+  }
+
+  .genderGraph {
+    width: 380px;
+    height: 40px;
     border-radius: 10px;
-    border: 1px solid #c1c1c1;
+    display: flex;
+    margin-top: 30px;
+    background: #ff00452b;
+    margin-bottom: 30px;
+  }
+
+  .male {
+    border-radius: 10px 0 0 10px;
+    background: #ff0045;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: #ffffff;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+    text-align: left;
+  }
+
+  .female {
+    border-radius: 0 10px 10px 0;
+    background: #ff00452b;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: #3f3f3f;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+    text-align: right;
+  }
+
+  .ageStats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .ageGroup {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
-  
-    .title {
-      font-family: Inter;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 28px;
-      letter-spacing: 0.32px;
-      text-align: center;
-      color: #3f3f3f;
-      width: 100%;
-      padding: 20px 0;
-    }
-  
-    .divider {
-      width: 100%;
-      border-bottom: 1px solid #c1c1c1;
-    }
-  
-    .genderGraph {
-      width: 380px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      margin-top: 20px;
-      background: #FF00452B; /* Default background for the female section */
-    }
-  
-    .male {
-      border-radius: 10px 0 0 10px;
-      background: #FF0045;
-      display: flex;
-      align-items: center;
-      padding-left: 10px;
-      color: #FFFFFF;
-      font-family: Inter;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 28px;
-      letter-spacing: 0.32px;
-      text-align: left;
-    }
-  
-    .female {
-      border-radius: 0 10px 10px 0;
-      background: #FF00452B;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 10px;
-      color: #3F3F3F;
-      font-family: Inter;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 28px;
-      letter-spacing: 0.32px;
-      text-align: right;
-    }
   }
-  
+
+  .rank {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+
+  .ageRange {
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+    text-align: center;
+    color: #000000;
+  }
+}
+
+//돌아가는 로딩 스타일
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingSpinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #ff0045;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}

@@ -7,10 +7,12 @@ const ViewerStat = () => {
   const channelId = 'UCZ3dxObRPEJzoryEyQqmhWg';
   const { data, loading, error } = useQuery(getChannel, { variables: { channelId } });
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className={styles.loadingSpinner}></div>;
   if (error) return <div>Error: {error.message}</div>;
 
   const { F: femalePercent, M: malePercent } = data.channel.genderPercent;
+
+  const sortedAges = [...data.channel.age].sort((a, b) => b.percent - a.percent).slice(0, 3);
 
   return (
     <div className={styles.viewerStat}>
@@ -19,6 +21,16 @@ const ViewerStat = () => {
       <div className={styles.genderGraph}>
         <div className={styles.male} style={{ width: `${malePercent}%` }}>남자</div>
         <div className={styles.female} style={{ width: `${femalePercent}%` }}>여자</div>
+      </div>
+      <div className={styles.title}>시청자 나이대 Top 3</div>
+      <div className={styles.divider}></div>
+      <div className={styles.ageStats}>
+        {sortedAges.map((age, index) => (
+          <div key={index} className={styles.ageGroup}>
+            <div className={styles.rank}>{`${index + 1}위`}</div>
+            <div className={styles.ageRange}>{`${age.min}-${age.max ? age.max : '+'}`}</div>
+          </div>
+        ))}
       </div>
     </div>
   );

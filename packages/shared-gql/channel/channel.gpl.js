@@ -36,6 +36,12 @@ export const getChannel = gql`
         F
         M
       }
+      # 시청자 분석의 시청자 나이대
+      age {
+        max
+        min
+        percent
+      }
     }
     videos(videoIds: $videoIds) {
       # 해당 영상의 조회수
