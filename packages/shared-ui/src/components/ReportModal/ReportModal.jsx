@@ -9,6 +9,7 @@ import RecentAdVideoStat from '../RecentAdVideoStat/RecentAdVideoStat'
 import ViewerStat from '../ViewerStat/ViewerStat'
 import RevenueAnalysis from '../RevenueAnalysis/RevenueAnalysis'
 import AdvertisingPrice from '../AdvertisingPrice/AdvertisingPrice'
+import ExtraInputForm from '../ExtraInputForm/ExtraInputForm'
 
 const ReportModal = ({ show, onClose }) => {
   const [currentDate, setCurrentDate] = useState('')
@@ -81,6 +82,11 @@ const ReportModal = ({ show, onClose }) => {
         <div className={styles.viewertitle}>광고 단가</div>
         <div className={styles.videoStatsContainer}>
         <AdvertisingPrice/>
+        </div>
+        <br/><br/><br/><br/><br/><br/>
+        <div className={styles.viewertitle}>추가 전달 사항</div>
+        <div className={styles.videoStatsContainer}>
+        <ExtraInputForm/>
         </div>
         <button className={styles.button} onClick={savePdf}>
           pdf로 저장하기
