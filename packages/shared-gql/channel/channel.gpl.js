@@ -42,6 +42,20 @@ export const getChannel = gql`
         min
         percent
       }
+      # {광고 단가}
+      # 최대 광고 단가 (브랜디드)
+      maxAdvertisingUnitPrice
+      # 최소 광고 단가 (ppl)
+      minAdvertisingUnitPrice
+      # 광고 단가 (원화)
+      advertisingUnitPrice
+      # 광고 단가 > cpv 정보
+      cpvInfo {
+        # ppl
+        cpv
+        # 브랜디드
+        cpvBrand
+      }
       # 광고 단가 30일간 일일 조회수 평균
       dailyAverageViewCount
       # 위의 일일 조회수 평균에서 쇼츠랑 일반 영상 비율을 나타내는 것
