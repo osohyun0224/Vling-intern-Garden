@@ -138,3 +138,4 @@ const ReportModal = ({ show, onClose }) => {
 }
 
 export default ReportModal
+
