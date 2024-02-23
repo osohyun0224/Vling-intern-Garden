@@ -10,9 +10,20 @@ import ViewerStat from '../ViewerStat/ViewerStat'
 import RevenueAnalysis from '../RevenueAnalysis/RevenueAnalysis'
 import AdvertisingPrice from '../AdvertisingPrice/AdvertisingPrice'
 import ExtraInputForm from '../ExtraInputForm/ExtraInputForm'
+import SuggestAdCost from '../SuggestAdCost/SuggestAdCost'
 
 const ReportModal = ({ show, onClose }) => {
   const [currentDate, setCurrentDate] = useState('')
+  const [adType, setAdType] = useState('')
+  const [contact, setContact] = useState('')
+
+  const handleAdTypeSelection = (type) => {
+    setAdType(type)
+  }
+
+  const handleContactChange = (e) => {
+    setContact(e.target.value)
+  }
 
   useEffect(() => {
     if (show) {
@@ -81,16 +92,46 @@ const ReportModal = ({ show, onClose }) => {
         </div>
         <div className={styles.viewertitle}>광고 단가</div>
         <div className={styles.videoStatsContainer}>
-        <AdvertisingPrice/>
+          <AdvertisingPrice />
         </div>
-        <br/><br/><br/><br/><br/><br/>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <div className={styles.viewertitle}>추가 전달 사항</div>
         <div className={styles.videoStatsContainer}>
-        <ExtraInputForm/>
+          <ExtraInputForm />
+        </div>
+        <div className={styles.groupContainer}>
+          <div className={styles.group}>
+            <div className={styles.viewertitle}>최소 광고 비용 제안</div>
+            <SuggestAdCost />
+          </div>
+          <div className={styles.group}>
+            <div className={styles.viewertitle}>광고 진행 유형</div>
+            <div className={styles.adTypeSelection}>
+              <button onClick={() => handleAdTypeSelection('normal')}>일반 영상</button>
+              <button onClick={() => handleAdTypeSelection('shorts')}>Shorts</button>
+            </div>
+          </div>
+          <div className={styles.group}>
+            <div className={styles.viewertitle}>연락 수단</div>
+            <div className={styles.contactInput}>
+              <input
+                type="text"
+                placeholder="이메일 혹은 전화번호를 입력하세요"
+                value={contact}
+                onChange={handleContactChange}
+              />
+            </div>
+          </div>
         </div>
         <button className={styles.button} onClick={savePdf}>
           pdf로 저장하기
         </button>
+        <button className={styles.button}>광고 제안하기</button>
       </div>
     </div>
   )

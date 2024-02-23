@@ -87,3 +87,36 @@
   margin-left:-10px;
   gap: 30px;
 }
+
+.adTypeSelection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.contactInput {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  input {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #C1C1C1;
+    padding: 0 10px;
+  }
+}
+
+  .groupContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

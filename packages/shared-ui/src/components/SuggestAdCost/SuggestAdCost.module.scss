@@ -1,0 +1,22 @@
+.suggestAdCost {
+    .adCostInput {
+        width: 400px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid #C1C1C1;
+        padding: 0 15px; // 내부 패딩을 추가하여 텍스트가 입력창 경계에 바로 붙지 않도록 합니다.
+        font-size: 16px; // 입력 텍스트 크기를 적절하게 조정합니다.
+
+        // 플레이스홀더 스타일을 조정하고 싶다면 아래와 같이 추가할 수 있습니다.
+        &::placeholder {
+            color: #888;
+        }
+
+        // 입력창 포커스 시 스타일 변경을 원한다면 아래와 같이 추가할 수 있습니다.
+        &:focus {
+            outline: none;
+            border-color: #4A90E2; // 포커스 됐을 때의 테두리 색상
+            box-shadow: 0 0 3px #C1C1C1; // 선택적인 그림자 효과
+        }
+    }
+}
