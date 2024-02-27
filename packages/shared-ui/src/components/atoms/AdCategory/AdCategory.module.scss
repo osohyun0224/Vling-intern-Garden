@@ -1,16 +1,14 @@
+// AdCategory.module.scss
+
 .category {
-    width: 52px;
-    height: 20px;
-    background: #FFD9D9;
-    border-radius: 5px;
-    padding-top: 2px;
-    font-family: Noto Sans;
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 15px;
-    letter-spacing: -0.6px;
-    text-align: center;
-    color: #FF0045;
-    margin-bottom: 10px;
-  }
-  
+  width: auto; // 너비를 자동으로 조정하여 텍스트 크기에 맞춥니다.
+  padding: 5px 10px; // 내부 패딩을 조정하여 더 많은 공간을 제공합니다.
+  background: #E0F7FA; // 밝은 청록색 배경으로 변경합니다.
+  border-radius: 10px; // 둥근 모서리를 더욱 강조합니다.
+  font-family: 'Noto Sans', sans-serif; // 폰트 패밀리를 명시적으로 설정합니다.
+  font-size: 12px; // 텍스트 크기를 조금 더 크게 조정합니다.
+  font-weight: bold; // 글꼴 두께를 굵게 설정합니다.
+  color: #00796B; // 진한 청록색 텍스트로 변경합니다.
+  margin-bottom: 15px; // 하단 여백을 늘립니다.
+  display: inline-block; // 인라인 블록 디스플레이로 변경하여 콘텐츠 너비에 맞게 조정합니다.
+}

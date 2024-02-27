@@ -1,0 +1,50 @@
+.buttonSavePdf {
+    width: 200px;
+    height: 30px;
+    border-radius: 6px;
+    gap: 10px;
+    background: #FF0045;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+
+.buttonProposeAd {
+    width: 200px;
+    height: 30px;
+    border-radius: 6px;
+    gap: 10px;
+    background: #FFFFFF;
+    color: #FF0045;
+    border: 1px solid #FF0045;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .adTypeSelection{
+    margin-left:-150px;
+  }
+
+  .adTypeButton {
+    width: 100px;
+    height: 30px;
+    border-radius: 6px;
+    border: 2px solid #FF0045;
+    gap: 10px;
+    background: transparent;
+    color: initial;
+    margin-top:-10px;
+    margin-left:20px;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .selected {
+    background: #FF0045;
+    color: #ffffff;
+  }
+  

@@ -23,10 +23,26 @@
   margin-bottom: 20px;
   overflow-y: auto;
   box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #FF0045;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #b3003b;
+  }
 }
 
 .divider {
-  width: 1150px;
+  width: 1130px;
   border: 1px solid #d9d9d9;
 }
 
@@ -80,6 +96,17 @@
   margin-top:10px;
 }
 
+.youtubertitle{
+  font-family: Noto Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.3199999928474426px;
+  text-align: left;
+  color: #3f3f3f;
+  margin-top:10px;
+  margin-left: -240px;
+}
 .videoStatsContainer {
   display: flex;
   justify-content: center;
@@ -97,7 +124,8 @@
 .contactInput {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-left: -20px;
 
   input {
     width: 300px;
@@ -108,11 +136,22 @@
   }
 }
 
+.endtext{
+  font-family: Noto Sans;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 28px;
+  color: #3f3f3f;
+  margin-top:10px;
+}
+
   .groupContainer {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 95%;
     margin-top: 20px;
+    margin-left:10px;
   }
   
   .group {
@@ -120,3 +159,58 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .linegroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttonSavePdf {
+    width: 200px;
+    height: 30px;
+    border-radius: 6px;
+    gap: 10px;
+    background: #FF0045;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+  
+  .buttonProposeAd {
+    width: 200px;
+    height: 30px;
+    border-radius: 6px;
+    gap: 10px;
+    background: #FFFFFF;
+    color: #FF0045;
+    border: 1px solid #FF0045;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .adTypeSelection{
+    margin-left:-150px;
+  }
+  .adTypeButton {
+    width: 100px;
+    height: 30px;
+    border-radius: 6px;
+    border: 2px solid #FF0045;
+    gap: 10px;
+    background: transparent;
+    color: initial;
+    margin-top:-10px;
+    margin-left:20px;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .selected {
+    background: #FF0045;
+    color: #ffffff;
+  }
+  

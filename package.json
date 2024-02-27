@@ -11,7 +11,8 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_4ac6af76603f43c"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.15",
@@ -23,6 +24,7 @@
     "@storybook/react": "^7.6.15",
     "@storybook/test": "^7.6.15",
     "@svgr/webpack": "^8.1.0",
+    "chromatic": "^11.0.0",
     "eslint-plugin-storybook": "^0.6.15",
     "prettier": "^3.1.0",
     "react": "^18.2.0",
@@ -45,5 +47,6 @@
   "workspaces": [
     "workspace_template/*",
     "packages/**"
-  ]
+  ],
+  "version": ""
 }
