@@ -38,6 +38,7 @@
     "next": "^12.3.4",
     "next-i18next": "^11.0.0",
     "next-transpile-modules": "^10.0.1",
+    "prop-types": "^15.8.1",
     "sass": "^1.69.5"
   },
   "packageManager": "npm@8.19.2",
