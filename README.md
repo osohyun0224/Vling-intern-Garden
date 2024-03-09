@@ -1,4 +1,5 @@
 # Vling API를 활용한 Garden의 사이드 프로젝트 🧐
+⚠️ 원본 코드는 사내 코드가 포함되어있어 공개가 가능한 부분만 작성되어있으니, 이점 유의하시길 바랍니다.
 
 <img width="1147" alt="image" src="https://github.com/osohyun0224/Vling-intern-Garden/assets/53892427/eb4ae045-2f5e-4b7e-810b-0a1635f0ec14">
 
