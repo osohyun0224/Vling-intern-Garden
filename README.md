@@ -1,5 +1,6 @@
 # Vling API를 활용한 Garden의 사이드 프로젝트 🧐
-⚠️ 원본 코드는 사내 코드가 포함되어있어 공개가 가능한 부분만 작성되어있으니, 이점 유의하시길 바랍니다.
+⚠️ 원본 코드는 사내 코드가 포함되어있어 공개가 가능한 부분만 작성되어있으니, 이점 유의하시길 바랍니다. <br/>
+📝 이 프로젝트의 회고글이 궁금하다면? [사내 데이터로 사이드 프로젝트 하는 인턴이 있다?](https://velog.io/@osohyun0224/%EC%82%AC%EB%82%B4-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A1%9C-%EC%82%AC%EC%9D%B4%EB%93%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%95%98%EB%8A%94-%EC%9D%B8%ED%84%B4%EC%9D%B4-%EC%9E%88%EB%8B%A4) 
 
 <img width="1147" alt="image" src="https://github.com/osohyun0224/Vling-intern-Garden/assets/53892427/eb4ae045-2f5e-4b7e-810b-0a1635f0ec14">
 
